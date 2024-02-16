@@ -24,6 +24,14 @@ function addTodo(txt){
     gTodos.unshift(newTodo)
 }
 
+
+function readTodo(todoId) {
+    const todo = gTodos.find(todo => todo.id === todoId)
+    return todo
+}
+
+
+
 function createTodos() {
     gTodos = [
 

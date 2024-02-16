@@ -14,6 +14,7 @@ function renderTodos() {
         ` <li onclick="onToggleTodo('${todo.id}')">
         
     <span class="${todo.isDone ? 'done' : ''}">${todo.txt}</span>
+    <button onclick="onReadTodo(event, '${todo.id}')">Details</button>
     <button onclick="onRemoveTodo(event, '${todo.id}')">X</button>
 
     </li>
@@ -29,6 +30,21 @@ function onRemoveTodo(ev, todoid) {
     ev.stopPropagation()
     removeTodos(todoid)
     renderTodos()
+}
+function onReadTodo(ev, todoid) {
+    ev.stopPropagation()
+    const todo = readTodo(todoid)
+    const elTodoDetails = document.querySelector('.todo-details') 
+    const elSpan = elTodoDetails.querySelector('h2 span')
+    const elpre = elTodoDetails.querySelector('pre')
+    elpre.innerText = JSON.stringify(todo, null, 4)
+    elSpan.innerText=todo.txt
+    elTodoDetails.showModal()
+
+    // setTimeout(() => {
+
+    // elTodoDetails.close()
+    // }, 2000)
 }
 
 function onToggleTodo(todoid) {

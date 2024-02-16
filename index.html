@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="css/todo.css">
     <title>ToDos</title>
     <h1 class="title">My ToDo list</h1>
+    <section class="filter">
+        <span>Filter By:</span>
+        <select onchange="onSetFilterBy(this)">
+            <option value="all">All</option>
+            <option value="done">Done</option>
+            <option value="active">Active</option>
+        </select>
+    </section>
 
 </head>
 
@@ -25,9 +33,21 @@
             <button>X</button>
 
         </li>
-       
-    </ul>
 
+    </ul>
+    <dialog class="todo-details">
+        <form method="dialog">
+            <h2>Todo: <span></span></h2>
+            <pre> </pre>
+            <button>X</button>
+        </form>
+    </dialog>
+
+    <footer>
+        
+
+
+    </footer>
     <script src="js/services/util.service.js"></script>
     <script src="js/services/todo.service.js"></script>
     <script src="js/todo.controller.js"></script>

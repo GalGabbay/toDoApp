@@ -22,7 +22,8 @@ body {
 }
 
 
-.new-todo {
+.new-todo,
+ .filter {
     padding: 15px var(--container-padding);
     background-color: lightsteelblue;
 }
@@ -37,6 +38,7 @@ body {
 
 .todo-list li {
     display: flex;
+    gap: 5px;
 
     padding: 15px var(--container-padding);
     border-radius: 3px;
@@ -58,6 +60,11 @@ body {
 
 h1.title {
     padding-inline: var(--container-padding);
+}
+
+.todo-details{
+
+    border: 2px solid rgb(47, 45, 45);
 }
 
 .done {
