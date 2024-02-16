@@ -11,11 +11,15 @@ function onInit() {
 
 function renderTodos() {
 
-    const strHTMLs = gTodos.map(todo => `
     
-    <li>
+    const strHTMLs = gTodos.map(todo => 
+        
+        
 
-    <span>${todo.txt}</span>
+        `
+    <li onclick="onToggleTodo('${todo.id}')">
+        
+    <span class="${todo.isDone ? 'done' : ''}">${todo.txt}</span>
     <button>X</button>
 
     </li>
@@ -27,6 +31,11 @@ function renderTodos() {
     elTodoList.innerHTML = strHTMLs.join('')
 
 }
+
+function onToggleTodo(todoid) {
+    console.log(todoid)
+}
+
 
 function createTodos() {
     gTodos = [

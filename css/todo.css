@@ -58,6 +58,8 @@ body {
 
 h1.title {
     padding-inline: var(--container-padding);
+}
 
-
+.done {
+    text-decoration: line-through;
 }
