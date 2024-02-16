@@ -1,0 +1,63 @@
+* {
+
+    box-sizing: border-box;
+}
+
+:root {
+
+    --container-padding: 10px
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.new-todo {
+    padding: 15px var(--container-padding);
+    background-color: lightsteelblue;
+}
+
+
+.todo-list {
+
+    padding: var(--container-padding);
+    list-style: none;
+
+}
+
+.todo-list li {
+    display: flex;
+
+    padding: 15px var(--container-padding);
+    border-radius: 3px;
+    cursor: pointer;
+
+
+}
+
+.todo-list li:nth-child(odd) {
+
+    background-color: rgb(214, 203, 203);
+}
+
+
+.todo-list li span {
+
+    flex-grow: 1;
+}
+
+h1.title {
+    padding-inline: var(--container-padding);
+
+
+}
