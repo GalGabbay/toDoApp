@@ -33,7 +33,10 @@ function renderTodos() {
 }
 
 function onToggleTodo(todoid) {
-    console.log(todoid)
+   const todo = gTodos.find(todo => todo.id === todoid)
+   console.log(todo)
+   todo.isDone = !todo.isDone
+   renderTodos()
 }
 
 
