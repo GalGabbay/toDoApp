@@ -46,6 +46,17 @@ function onToggleTodo(todoid) {
    renderTodos()
 }
 
+function onAddTodo(ev) {
+    ev.preventDefault()
+
+    const elInput = document.querySelector('.new-todo input')
+    if (!elInput.value) return
+
+    const newTodo = createTodo(elInput.value)
+    gTodos.unshift(newTodo)
+    elInput.value = ''
+    renderTodos()
+}
 
 function createTodos() {
     gTodos = [
