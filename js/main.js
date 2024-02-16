@@ -20,7 +20,7 @@ function renderTodos() {
     <li onclick="onToggleTodo('${todo.id}')">
         
     <span class="${todo.isDone ? 'done' : ''}">${todo.txt}</span>
-    <button>X</button>
+    <button onclick="onRemoveTodo(event, '${todo.id}')">X</button>
 
     </li>
 
@@ -32,9 +32,16 @@ function renderTodos() {
 
 }
 
+function onRemoveTodo (ev, todoid){
+    ev.stopPropagation()
+    const todoIdx = gTodos.findIndex(todo => todo.id === todoid)
+    console.log(todoIdx)
+    gTodos.splice(todoIdx, 1)
+    renderTodos()
+}
+
 function onToggleTodo(todoid) {
    const todo = gTodos.find(todo => todo.id === todoid)
-   console.log(todo)
    todo.isDone = !todo.isDone
    renderTodos()
 }
