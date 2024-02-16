@@ -24,6 +24,17 @@ function renderTodos() {
     const elTodoList = document.querySelector('.todo-list')
     elTodoList.innerHTML = strHTMLs.join('')
 
+    renderStats()
+
+}
+
+function renderStats(){
+
+    const elTotal = document.querySelector('.total-todos')
+    const elActive = document.querySelector('.active-todos')
+
+    elTotal.innerText = getTotalTodos()
+    elActive.innerText = getActiveTodos()
 }
 
 function onRemoveTodo(ev, todoid) {
@@ -46,6 +57,14 @@ function onReadTodo(ev, todoid) {
     // elTodoDetails.close()
     // }, 2000)
 }
+
+function onSetFilterBy(elSelect) { 
+    const filterBy = elSelect.value
+    setFilterBy(filterBy)
+    renderTodos()
+
+}
+
 
 function onToggleTodo(todoid) {
     toggleTodo(todoid)
